@@ -4,7 +4,8 @@ const LatestNews = () => {
       <h2 className="text-center mt-5 text-2xl font-semibold text-red-500">Notícias Anteriores</h2>
       <div className="w-full flex mt-3 p-3 border-b-2 border-solid border-gray-300">
         <img
-          className="w-[200px] h-[100px] rounded-md"
+          style={{ objectFit: 'cover' }}
+          className="w-48 h-28 rounded-md shadow-lg"
           src="https://picsum.photos/200/200"
           alt=""
         />
@@ -18,7 +19,8 @@ const LatestNews = () => {
       </div>
       <div className="w-full flex mt-3 p-3 border-b-2 border-solid border-gray-300">
         <img
-          className="w-[200px] h-[100px] rounded-md"
+          style={{ objectFit: 'cover' }}
+          className="w-48 h-28 rounded-md shadow-lg"
           src="https://picsum.photos/200/200"
           alt=""
         />

@@ -5,8 +5,8 @@ const Images = () => {
       <div className="mt-3 p-4  space-y-3 lg:space-y-0 lg:gap-2 lg:grid lg:grid-cols-4">
         <section className="w-full col-span-2 row-span-3 rounded-md shadow-lg relative  ">
           <div className="absolute  bottom-2 right-2">
-            <span className="text-red-500 font-semibold text-3xl ">Slug</span>
-            <h1 className="text-white font-semibold text-3xl">Notícia 1</h1>
+            <span className="text-white bg-red-500 py-1 px-2 font-semibold text-2xl ">Slug</span>
+            <h1 className="mt-2 text-white font-semibold text-3xl">Notícia 1</h1>
           </div>
           <img
             className="w-full h-72 rounded-md lg:h-full hover:cursor-pointer"
@@ -15,10 +15,12 @@ const Images = () => {
             alt=""
           />
         </section>
-        <section className=" w-full rounded shadow-lg relative">
+        <section className=" w-full flex rounded shadow-lg relative">
           <div className="absolute  bottom-2 right-2">
-            <span className="text-red-500  font-semibold text-3xl">Slug</span>
-            <h1 className="text-white font-semibold text-3xl">Notícia 1</h1>
+            <span className="text-white bg-red-500 py-1 px-2 font-semibold text-2xl flex-wrap ">
+              Slug
+            </span>
+            <h1 className="mt-2 text-white font-semibold text-3xl">Notícia 1</h1>
           </div>
           <img
             className="w-full h-72 rounded-md lg:h-full hover:cursor-pointer"
@@ -28,8 +30,8 @@ const Images = () => {
         </section>
         <section className="w-full rounded shadow-lg relative ">
           <div className="absolute  bottom-2 right-2">
-            <span className="text-red-500  font-semibold text-3xl">Slug</span>
-            <h1 className="text-white font-semibold text-3xl">Notícia 1</h1>
+            <span className="text-white bg-red-500 py-1 px-2 font-semibold text-2xl ">Slug</span>
+            <h1 className="mt-2 text-white font-semibold text-3xl">Notícia 1</h1>
           </div>
           <img
             className="w-full h-72 rounded-md lg:h-full hover:cursor-pointer"
@@ -39,8 +41,8 @@ const Images = () => {
         </section>
         <section className="col-span-1 row-span-2 rounded shadow-lg relative ">
           <div className=" absolute  bottom-2 right-2">
-            <span className="text-red-500  font-semibold text-3xl">Slug</span>
-            <h1 className="text-white font-semibold text-3xl">Notícia 1</h1>
+            <span className="text-white bg-red-500 py-1 px-2 font-semibold text-2xl ">Slug</span>
+            <h1 className="mt-2 text-white font-semibold text-3xl">Notícia 1</h1>
           </div>
           <img
             className="w-full h-72 rounded-md lg:h-full hover:cursor-pointer"
