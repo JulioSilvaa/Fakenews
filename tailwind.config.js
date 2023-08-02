@@ -2,7 +2,11 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'bg-news': "url('https://picsum.photos/id/237/200/200')",
+      },
+    },
   },
   plugins: [],
 };

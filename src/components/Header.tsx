@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className=" flex justify-between items-center p-2 border-b-4 border-solid border-red-500">
+    <header className=" flex w-full justify-between items-center p-2 border-b-4 border-solid border-red-500">
       <img className="w-28" src="/public/logoFakenews.jpg" alt="logo do fakenews" />
       <div className="flex gap-3">
         <button>
