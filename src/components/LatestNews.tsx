@@ -2,7 +2,7 @@ const LatestNews = () => {
   return (
     <section className="mx-2 lg:w-2/4 lg:mx-auto lg:flex place-items-center flex-col">
       <h2 className="text-center mt-5 text-2xl font-semibold text-red-500">Notícias Anteriores</h2>
-      <div className="w-full flex mt-3 p-3 border-b-2 border-solid border-gray-300 last:border-none">
+      <div className="w-full flex mt-3 p-3 border-b-2 border-solid border-gray-200 ">
         <img
           style={{ objectFit: 'cover' }}
           className="w-48 h-28 rounded-md shadow-lg"
@@ -17,7 +17,7 @@ const LatestNews = () => {
           <p className="pt-3 text-lg font-semibold text-zinc-800">Últimas Notícias</p>
         </div>
       </div>
-      <div className="w-full flex mt-3 p-3 border-b-2 border-solid border-gray-300">
+      <div className="w-full flex mt-3 p-3 border-b-2 border-solid border-gray-200">
         <img
           style={{ objectFit: 'cover' }}
           className="w-48 h-28 rounded-md shadow-lg"
