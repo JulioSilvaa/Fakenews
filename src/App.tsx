@@ -1,14 +1,11 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Home from './pages/Home';
+import { UserContextProvider } from './Contexts/useContext';
+import Router from './routes/Router';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Home />
-      <Footer />
-    </>
+    <UserContextProvider>
+      <Router />
+    </UserContextProvider>
   );
 }
 

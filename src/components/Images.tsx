@@ -1,11 +1,11 @@
 import useFetch from '@/hooks/useFetch';
-import { INews } from '@/interfaces';
+import { DataNews } from '@/interfaces';
 
 const Images = () => {
-  const { data: newsList } = useFetch<INews[]>('/news');
+  const { data } = useFetch<DataNews>('/news');
 
-  const lastFiveNews = newsList?.slice(-4);
-  const highlight = newsList?.slice(-1);
+  const lastFiveNews = data?.news?.slice(-4);
+  const highlight = data?.news.slice(-1);
 
   const lastNews = highlight?.map((news) => (
     <section key={news.id} className="relative rounded-md shadow-lg col-span-2 row-span-2">
