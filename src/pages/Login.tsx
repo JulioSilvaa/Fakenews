@@ -1,8 +1,9 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '@/components/Button';
 import Input from '@/components/Input';
+import { UseUser } from '@/Contexts/userContext';
 
 type FormValues = {
   email: string;
@@ -10,10 +11,16 @@ type FormValues = {
 };
 
 const Login = () => {
-  const { register, handleSubmit } = useForm<FormValues>();
+  const { register, handleSubmit, resetField } = useForm<FormValues>();
+  const navigate = useNavigate();
+
+  const { setOptions } = UseUser();
 
   const formSubmit = (data: FormValues) => {
-    console.log(data);
+    setOptions(data);
+    resetField('password');
+    resetField('email');
+    navigate('/');
   };
 
   return (

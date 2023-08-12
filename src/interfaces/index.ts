@@ -17,13 +17,14 @@ export interface DataUser extends IUser {
 }
 
 export interface IUserContext {
-  user: string;
-  setUser: React.Dispatch<React.SetStateAction<string>>;
+  user: object;
+  setUser: React.Dispatch<React.SetStateAction<object>>;
+  options: object;
+  setOptions: React.Dispatch<React.SetStateAction<object>>;
 }
 export interface INewsContext {
   news: string;
   setNews: React.Dispatch<React.SetStateAction<string>>;
-  // data: DataNews;
 }
 
 export interface IUser {
