@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { UseUser } from '@/Contexts/useContext';
+import { UseUser } from '@/Contexts/userContext';
 
 import ModalProfile from './ModalProfile';
 

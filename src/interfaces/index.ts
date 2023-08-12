@@ -20,6 +20,11 @@ export interface IUserContext {
   user: string;
   setUser: React.Dispatch<React.SetStateAction<string>>;
 }
+export interface INewsContext {
+  news: string;
+  setNews: React.Dispatch<React.SetStateAction<string>>;
+  // data: DataNews;
+}
 
 export interface IUser {
   id: string;

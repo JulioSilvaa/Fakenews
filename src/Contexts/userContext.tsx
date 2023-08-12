@@ -1,6 +1,5 @@
 import { createContext, PropsWithChildren, useContext, useState } from 'react';
 
-// import useFetch from '@/hooks/useFetch';
 import { IUserContext } from '@/interfaces';
 
 const UserContext = createContext<IUserContext | null>(null);
@@ -13,8 +12,6 @@ export const UseUser = () => {
 
 export const UserContextProvider = ({ children }: PropsWithChildren) => {
   const [user, setUser] = useState('Julio');
-
-  // const { data: User } = useFetch<IUser[]>('/user');
 
   const data = {
     user,

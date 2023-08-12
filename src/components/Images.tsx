@@ -4,8 +4,8 @@ import { DataNews } from '@/interfaces';
 const Images = () => {
   const { data } = useFetch<DataNews>('/news');
 
-  const lastFiveNews = data?.news?.slice(-4);
-  const highlight = data?.news.slice(-1);
+  const lastFiveNews = data?.news?.slice(1, 4);
+  const highlight = data?.news.slice(0, 1);
 
   const lastNews = highlight?.map((news) => (
     <section key={news.id} className="relative rounded-md shadow-lg col-span-2 row-span-2">
@@ -19,7 +19,7 @@ const Images = () => {
         <img
           className="w-full rounded-md hover:cursor-pointer"
           style={{ objectFit: 'cover' }}
-          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Wm8ow4v1pCv-6HxBsy7F_AHaEo%26pid%3DApi&f=1&ipt=125f6dc4c264813d6e38de6dc3ad89b247cd24fb7dc48947f6e30f72ee1bcdf1&ipo=images"
+          src={news.newsUrl[0]}
         />
       </div>
     </section>

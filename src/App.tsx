@@ -1,10 +1,13 @@
-import { UserContextProvider } from './Contexts/useContext';
+import { NewsContextProvider } from './Contexts/newsContext';
+import { UserContextProvider } from './Contexts/userContext';
 import Router from './routes/Router';
 
 function App() {
   return (
     <UserContextProvider>
-      <Router />
+      <NewsContextProvider>
+        <Router />
+      </NewsContextProvider>
     </UserContextProvider>
   );
 }

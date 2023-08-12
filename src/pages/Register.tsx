@@ -5,7 +5,7 @@ import Input from '@/components/Input';
 
 const Register = () => {
   return (
-    <form className="max-w-[350px] container mx-auto mt-9 flex-1 flex flex-col p-5">
+    <form className="max-w-[500px] h-screen  container mx-auto mt-9 flex-1 flex flex-col p-5">
       <h1 className="text-center text-2xl font-sans">Cadastro</h1>
       <Input name="name" label="Nome" type="text" />
       <Input name="email" label="Email" type="email" />
@@ -15,10 +15,10 @@ const Register = () => {
       <Button variant="primary" type="submit" onclick={() => console.log('julio')}>
         Enviar
       </Button>
-      <span className="mt-4 text-sm">
+      <span className="mt-4 text-xs text-center">
         Já possui cadastro ? faça o
-        <Link to="/register">
-          <strong className="text-left mx-1 text-red-600 cursor-pointer hover:underline">
+        <Link to="/login">
+          <strong className="text-sm mx-1 text-red-600 cursor-pointer hover:underline">
             login
           </strong>
         </Link>

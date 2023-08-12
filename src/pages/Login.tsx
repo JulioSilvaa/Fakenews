@@ -5,7 +5,7 @@ import Input from '@/components/Input';
 
 const Login = () => {
   return (
-    <form className="max-w-[350px] container mx-auto mt-9 flex-1 flex flex-col p-5">
+    <form className="max-w-[500px] h-screen container mx-auto mt-9 flex-1  flex flex-col p-5">
       <h1 className="text-center text-2xl font-sans">Login</h1>
       <Input name="email" label="Email" type="email" />
       <Input name="password" label="Senha" type="text" />
