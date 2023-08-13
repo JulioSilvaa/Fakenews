@@ -7,16 +7,14 @@ const useAuth = (url: string, options?: object) => {
   const [data, setData] = useState<IUser | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  console.log(options);
-  console.log(url);
-  console.log(data);
 
   const authUser = () => {
     setLoading(true);
     newsApi
-      .post(url, options) // Passando as opções para a chamada da API
+      .post(url, options)
       .then((res) => {
         setData(res.data);
+        localStorage.setItem('token', res.data.token);
         setLoading(false);
       })
       .catch((err) => setError(err));

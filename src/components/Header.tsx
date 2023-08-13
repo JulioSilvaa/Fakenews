@@ -1,17 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { UseUser } from '@/Contexts/userContext';
-
 import ModalProfile from './ModalProfile';
 
 const Header = () => {
   const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [logedin, setLogedin] = useState(false);
-
-  const { user } = UseUser();
-  console.log(user);
 
   const handleModalOpen = () => {
     setModalIsOpen(!modalIsOpen);

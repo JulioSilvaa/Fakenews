@@ -17,8 +17,6 @@ export interface DataUser extends IUser {
 }
 
 export interface IUserContext {
-  user: object;
-  setUser: React.Dispatch<React.SetStateAction<object>>;
   options: object;
   setOptions: React.Dispatch<React.SetStateAction<object>>;
 }
