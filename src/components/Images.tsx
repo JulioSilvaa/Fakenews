@@ -4,7 +4,7 @@ import { DataNews } from '@/interfaces';
 const Images = () => {
   const { data } = useFetch<DataNews>('/news');
 
-  const lastFiveNews = data?.news?.slice(1, 4);
+  const lastFiveNews = data?.news?.slice(1, 5);
   const highlight = data?.news.slice(0, 1);
 
   const lastNews = highlight?.map((news) => (

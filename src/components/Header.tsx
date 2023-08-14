@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
+import { UseUser } from '@/Contexts/userContext';
 
 import ModalProfile from './ModalProfile';
 
@@ -7,6 +10,10 @@ const Header = () => {
   const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [logedin, setLogedin] = useState(false);
+  const storageData = localStorage.getItem('token');
+
+  // @ts-ignore
+  const { data } = UseUser();
 
   const handleModalOpen = () => {
     setModalIsOpen(!modalIsOpen);
@@ -22,7 +29,7 @@ const Header = () => {
       <Link to={'/'}>
         <img className="w-28 cursor-pointer" src="/logoFakenews.jpg" alt="logo do fakenews" />
       </Link>
-      {logedin && (
+      {storageData && (
         <div className="flex gap-3">
           <button onClick={handleModalOpen}>
             <span
@@ -46,15 +53,16 @@ const Header = () => {
               }`}
             />
           </button>
+
           <img
-            className="w-12 rounded-full shadow-md"
-            src="https://i.pravatar.cc/150?img=2"
-            alt="Foto do perfil do usuário"
+            className="w-12 h-12 rounded-full shadow-md text-[10px] text-center "
+            src={data?.user.avatarUrl}
+            alt="Avatar do Usuário"
           />
         </div>
       )}
 
-      {!logedin && (
+      {!storageData && (
         <button
           className=" px-4 border border-separate border-solid border-red-500 rounded-md shadow-md text-sm font-medium first-letter:text-red-500"
           onClick={handleLogin}
@@ -63,7 +71,7 @@ const Header = () => {
         </button>
       )}
 
-      {modalIsOpen ? <ModalProfile /> : ''}
+      {modalIsOpen ? <ModalProfile handleModalOpen={handleModalOpen} /> : ''}
     </header>
   );
 };

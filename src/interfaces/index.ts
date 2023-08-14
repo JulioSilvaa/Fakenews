@@ -19,6 +19,7 @@ export interface DataUser extends IUser {
 export interface IUserContext {
   options: object;
   setOptions: React.Dispatch<React.SetStateAction<object>>;
+  data: IUser | null;
 }
 export interface INewsContext {
   news: string;
@@ -26,8 +27,14 @@ export interface INewsContext {
 }
 
 export interface IUser {
-  id: string;
-  name: string;
-  avatarUrl: string;
-  posts: [title: string, slug: string, content: string];
+  token: string;
+  user: {
+    id: string;
+    email: string;
+    username: string;
+    avatarUrl: string;
+    name: string;
+    password: string;
+    createdAt: Date;
+  };
 }
