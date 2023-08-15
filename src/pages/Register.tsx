@@ -29,7 +29,7 @@ const Register = () => {
     }
 
     newsApi
-      .post('http://localhost:5000/api/v2/user/register', formData)
+      .post('/user/register', formData)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
     console.log(data);
