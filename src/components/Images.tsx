@@ -17,7 +17,7 @@ const Images = () => {
           {news.slug}
         </span>
         <img
-          className="w-full rounded-md hover:cursor-pointer"
+          className="w-full h-full rounded-md hover:cursor-pointer"
           style={{ objectFit: 'cover' }}
           src={news.newsUrl[0]}
         />

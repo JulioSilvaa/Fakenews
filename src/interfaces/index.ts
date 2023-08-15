@@ -18,6 +18,7 @@ export interface DataUser extends IUser {
 
 export interface IUserContext {
   options: object;
+  authUser: () => void;
   setOptions: React.Dispatch<React.SetStateAction<object>>;
   data: IUser | null;
 }

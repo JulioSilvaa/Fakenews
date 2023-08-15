@@ -63,12 +63,22 @@ const Header = () => {
       )}
 
       {!storageData && (
-        <button
-          className=" px-4 border border-separate border-solid border-red-500 rounded-md shadow-md text-sm font-medium first-letter:text-red-500"
-          onClick={handleLogin}
-        >
-          Login
-        </button>
+        <div className="gap-4 flex">
+          <button
+            className=" px-4 border border-separate border-solid border-red-500 rounded-md shadow-md text-sm font-medium first-letter:text-red-500"
+            onClick={handleLogin}
+          >
+            Login
+          </button>
+          <button
+            className=" px-4 border border-separate border-solid border-red-500 rounded-md shadow-md text-sm font-medium first-letter:text-red-500"
+            onClick={() => {
+              navigate('/register');
+            }}
+          >
+            Criar usuário
+          </button>
+        </div>
       )}
 
       {modalIsOpen ? <ModalProfile handleModalOpen={handleModalOpen} /> : ''}

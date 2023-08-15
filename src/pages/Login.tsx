@@ -14,10 +14,11 @@ const Login = () => {
   const { register, handleSubmit, resetField } = useForm<FormValues>();
   const navigate = useNavigate();
 
-  const { setOptions } = UseUser();
+  const { setOptions, authUser } = UseUser();
 
   const formSubmit = (data: FormValues) => {
     setOptions(data);
+    authUser();
     resetField('password');
     resetField('email');
     navigate('/');

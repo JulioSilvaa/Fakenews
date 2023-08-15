@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import newsApi from '@/service/newsApiV2';
 
@@ -19,12 +19,7 @@ function useAuth<T>(url: string, options?: object) {
       .catch((err) => setError(err));
   };
 
-  useEffect(() => {
-    authUser();
-    return () => {};
-  }, [url, options]);
-
-  return { data, loading, error };
+  return { data, loading, error, authUser };
 }
 
 export default useAuth;
