@@ -6,8 +6,8 @@ export const standardizeImage = async (file: File): Promise<Blob | null> => {
     img.onload = () => {
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
-      canvas.width = 224;
-      canvas.height = 224;
+      canvas.width = 500;
+      canvas.height = 500;
       ctx?.drawImage(img, 0, 0, canvas.width, canvas.height);
 
       canvas.toBlob((blob) => {

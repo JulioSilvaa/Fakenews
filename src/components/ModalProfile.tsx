@@ -1,11 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 
+import { UseUser } from '@/Contexts/userContext';
+
 interface IModalProps {
   handleModalOpen: () => void;
 }
 
 const ModalProfile = ({ handleModalOpen }: IModalProps) => {
   const navigate = useNavigate();
+
+  const { data } = UseUser();
+  console.log(data);
+
   return (
     <div className="absolute w-48 lg:font-semibold right-8 top-16 bg-slate-50 border border-solid border-red-500 shadow-lg rounded-md">
       <nav className="p-2 text-lg">
