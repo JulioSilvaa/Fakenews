@@ -1,9 +1,10 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import newsApi from '@/service/newsApiV2';
+import { standardizeImage } from '@/utils/renderImage';
 
 type FormValues = {
   content: string;
@@ -13,23 +14,28 @@ type FormValues = {
 };
 
 const CreateFakeNews = () => {
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm<FormValues>();
 
-  const formSubmit = (data: FormValues) => {
+  const formSubmit = async (data: FormValues) => {
     const formData = new FormData();
     formData.append('content', data.content);
     formData.append('slug', data.slug);
     formData.append('title', data.title);
 
-    // Since FileList is array-like, we loop through it and append each file
     for (let i = 0; i < data.file.length; i++) {
-      formData.append('file', data.file[i]);
+      const standardizedImage = await standardizeImage(data.file[i]);
+      if (standardizedImage) {
+        formData.append('file', standardizedImage, data.file[i].name);
+      }
     }
+
     newsApi
       .post(`/news`, formData)
-      .then((res) => console.log(res))
+      .then(() => navigate('/'))
       .catch((err) => console.log(err));
   };
+
   return (
     <form
       onSubmit={handleSubmit(formSubmit)}
