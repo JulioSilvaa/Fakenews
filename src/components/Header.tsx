@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -10,9 +9,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [logedin, setLogedin] = useState(false);
-  const storageData = localStorage.getItem('token');
 
-  // @ts-ignore
   const { data } = UseUser();
 
   const handleModalOpen = () => {
@@ -29,7 +26,7 @@ const Header = () => {
       <Link to={'/'}>
         <img className="w-28 cursor-pointer" src="/logoFakenews.jpg" alt="logo do fakenews" />
       </Link>
-      {storageData && (
+      {data && (
         <div className="flex gap-3">
           <button onClick={handleModalOpen}>
             <span
@@ -62,21 +59,19 @@ const Header = () => {
         </div>
       )}
 
-      {!storageData && (
-        <div className="gap-4 flex">
+      {!data && (
+        <div className="gap-2 flex flex-wrap">
           <button
-            className=" px-4 border border-separate border-solid border-red-500 rounded-md shadow-md text-sm font-medium first-letter:text-red-500"
+            className=" px-2 md:h-8 border border-separate border-solid border-red-500 rounded-md shadow-md text-md md:text-lg font-medium first-letter:text-red-500"
             onClick={handleLogin}
           >
             Login
           </button>
           <button
-            className=" px-4 border border-separate border-solid border-red-500 rounded-md shadow-md text-sm font-medium first-letter:text-red-500"
-            onClick={() => {
-              navigate('/register');
-            }}
+            className=" px-2 h-8 border border-separate border-solid border-red-500 rounded-md shadow-md text-md md:text-lg font-medium first-letter:text-red-500"
+            onClick={() => navigate('/register')}
           >
-            Criar usuário
+            Cadastrar
           </button>
         </div>
       )}

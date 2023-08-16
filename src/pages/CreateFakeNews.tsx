@@ -35,11 +35,18 @@ const CreateFakeNews = () => {
       onSubmit={handleSubmit(formSubmit)}
       className="max-w-[500px] h-screen  container mx-auto mt-9 flex-1 flex flex-col p-5"
     >
-      <h1 className="text-center text-2xl font-sans">Cadastro</h1>
-      <Input label="Conteudo" type="text" register={{ ...register('content') }} />
-      <Input label="Slug / Tema" type="text" register={{ ...register('slug') }} />
-      <Input label="Título" type="text" register={{ ...register('title') }} />
-      <Input label="Imagem" type="file" register={{ ...register('file') }} multiple maxLength={3} />
+      <h1 className="text-center text-2xl font-sans">Adicionar nova FakNews</h1>
+      <Input name="content" label="Conteudo" type="text" register={{ ...register('content') }} />
+      <Input name="slug" label="Slug / Tema" type="text" register={{ ...register('slug') }} />
+      <Input name="title" label="Título" type="text" register={{ ...register('title') }} />
+      <Input
+        name="images"
+        label="Imagem"
+        type="file"
+        register={{ ...register('file') }}
+        multiple
+        maxLength={3}
+      />
 
       <Button type="submit">Enviar</Button>
       <span className="mt-4 text-xs text-center">

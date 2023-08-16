@@ -23,6 +23,7 @@ const ModalProfile = ({ handleModalOpen }: IModalProps) => {
             onClick={() => {
               localStorage.removeItem('token');
               handleModalOpen();
+              window.location.reload();
             }}
             className="hover:cursor-pointer hover:border-b-[1px] hover:border-red-400"
           >
