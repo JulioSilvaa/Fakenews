@@ -39,3 +39,26 @@ export interface IUser {
     createdAt: Date;
   };
 }
+
+export interface IUserById {
+  total: number;
+  totalPages: number;
+  users: [
+    {
+      avatarUrl: string;
+      id: string;
+      name: string;
+      posts: [
+        {
+          id: string;
+          content: string;
+          slug: string;
+          title: string;
+          newsUrl: string[];
+          createdAt: Date;
+          updateAt: Date;
+        },
+      ];
+    },
+  ];
+}
